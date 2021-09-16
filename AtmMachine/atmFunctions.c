@@ -1,12 +1,15 @@
 #include "account.h"
 
-account account1 = {"chandler", "bestUsername", "betterPassword", 6};
-account account2 = {"jo mama", "user", "pass", 10};
+account accountList[22] = {};
 
-char* foo()
+char* loadAccounts()
 {
+	account a1 = {"Bobby Bee","user1","pass1",100};
+	account a2 = {"Joe Mahma","user2","pass2",100};
 	
-	char* ret =  account1.name; 
+	accountList[0] = a1;
+        accountList[1] = a2;
+	char* ret =  accountList[0].name; 
 		
 
 	return ret;

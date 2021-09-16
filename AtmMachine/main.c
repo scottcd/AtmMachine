@@ -6,7 +6,7 @@ int main()
 {
 	while(1)
 	{
-		printf("%s\n",foo());
+		printf("%s\n",loadAccounts());
 	}
 
 	return 0;

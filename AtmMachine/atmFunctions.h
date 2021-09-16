@@ -1,9 +1,8 @@
 #ifndef ATMFUNCTIONS_H_INCLUDED
 #define ATMFUNCTIONS_H_INCLUDED
+#include "account.h"
 
-char* ac1;
-char* ac2;
 
-char* foo();
+char* loadAccounts();
 
 #endif
