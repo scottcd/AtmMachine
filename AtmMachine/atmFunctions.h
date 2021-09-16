@@ -5,4 +5,6 @@
 
 char* loadAccounts();
 
+char* login(char* username, char* password);
+
 #endif
