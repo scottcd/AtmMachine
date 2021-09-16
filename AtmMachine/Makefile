@@ -1,6 +1,6 @@
 
-atmMachine: atmMachine.c
-	gcc -o atmMachine atmMachine.c
+atmMachine: main.c
+	gcc -o atmMachine main.c atmFunctions.c
 
 clean:
 	rm atmMachine 
