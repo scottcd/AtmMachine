@@ -1,6 +1,6 @@
 #include "account.h"
 
-account accountList[22] = {};
+account accountList[2] = {};
 
 char* loadAccounts()
 {
@@ -10,7 +10,6 @@ char* loadAccounts()
 	accountList[0] = a1;
         accountList[1] = a2;
 	char* ret =  accountList[0].name; 
-		
-
+	
 	return ret;
 }
