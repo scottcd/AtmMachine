@@ -16,26 +16,17 @@ int main()
 		gets(username);
 		printf("Enter your password: ");
 		gets(password);
-
 		int validation = (int)login(username, password);
-
-		int validation = login(username, password);
-
 
 		if(validation == 0)
 		{
 			continue;
 		}
-
 		printf("Successful user login!\n");
-
-		
-
 		int menuChoice = 0;
 		
 		while(menuChoice != 4)
 		{
-
 			printf("Please select an option below. (1-4)");
 			printf("\n1. View Balance");
 			printf("\n2. Deposit" );
@@ -49,17 +40,6 @@ int main()
 			printf("%d", menuChoice);
 
 			char* atmResponse = processSelection(menuChoice);
-
-			printf("Successful user login!\n");
-			printf("Please select an option below. (1-4)");
-			printf("1. View Balance");
-			printf("2. Deposit" );
-			printf("3. Withdrawal");
-			printf("4. Log Out");
-
-			int menuChoice = gets();
-			char atmResponse[100] = processSelection(menuChoice);
-
 		
 			printf("%s \n\n", atmResponse);
 		}

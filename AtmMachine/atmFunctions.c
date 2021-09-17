@@ -13,7 +13,6 @@ void loadAccounts()
 	
 	accountList[0] = a1;
 	accountList[1] = a2;
-
 }
 
 char* processSelection(int menuChoice)
@@ -34,10 +33,6 @@ char* processSelection(int menuChoice)
 			ret = "";
 			loggedIn = -1;
 	}
-
-	char* ret =  accountList[0].name; 
-	
-
 	return ret;
 }
 
@@ -56,14 +51,8 @@ char* login(char* username, char* password) {
 	return "Invalid username";
 }
 
-
 int viewBalance()
 {
 	int currentBal = (int)accountList[loggedIn].balance;
-
-int* viewBalance()
-{
-	int* currentBal = accountList[loggedIn].balance;
-
 	return currentBal;
 }
