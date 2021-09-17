@@ -7,6 +7,12 @@ char* loadAccounts();
 
 char* login(char* username, char* password);
 
+
+int viewBalance();
+
+char* processSelection(int menuChoice);
+
 int* viewBalance();
+
 
 #endif
