@@ -37,11 +37,8 @@ int main()
 			gets(buffer);
 			menuChoice = (int)*buffer - 48;
 
-			printf("%d", menuChoice);
-
 			char* atmResponse = processSelection(menuChoice);
-		
-			printf("%s \n\n", atmResponse);
+			printf("\n%s\n\n", atmResponse);
 		}
 	}
 

@@ -1,5 +1,7 @@
 #include "account.h"
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 const int numberOfAccounts = 2;
 int loggedIn = -1; // int representing the currently logged in account, -1 if none 
@@ -15,44 +17,72 @@ void loadAccounts()
 	accountList[1] = a2;
 }
 
-char* processSelection(int menuChoice)
-{
-	char* ret;
-	int bal;
-	switch(menuChoice)
-	{
-		case 1:
-			bal = viewBalance();
-			ret = bal + '0';
-			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		default:
-			ret = "";
-			loggedIn = -1;
-	}
-	return ret;
-}
-
-char* login(char* username, char* password) {
+int login(char* username, char* password) {
 	for (int i = 0; i < numberOfAccounts; i++) {
 		if (strcmp(accountList[i].username, username) == 0) {
 			if (strcmp(accountList[i].password, password) == 0) {
 				loggedIn = i;
-				return "Success";
+				return 1;
 			}
 			else { 
-				return "Invalid password";
+				return 0;
 			}
 		}
 	}
-	return "Invalid username";
+	return 0;
+}
+
+void deposit (int val) {
+	accountList[loggedIn].balance += val;
+	return;
+}
+
+// returns -1 if error (out of bounds), 0 otherwise
+int withdraw (int val) {
+	if (accountList[loggedIn].balance >= val) {
+		accountList[loggedIn].balance -= val;
+		return 0;
+	}
+	return -1;
 }
 
 int viewBalance()
 {
 	int currentBal = (int)accountList[loggedIn].balance;
 	return currentBal;
+}
+
+char* processSelection(int menuChoice)
+{
+	static char ret[100];
+	int bal;
+	int input;
+	switch(menuChoice)
+	{
+		case 1:
+			bal = viewBalance();
+			sprintf(ret, "Balance: %d", bal);
+			break;
+		case 2:
+			printf("How much would you like to deposit: ");
+			scanf("%d", &input);
+			fflush(stdin); // clear buffer to avoid bad mermes
+			deposit(input);
+			stpcpy(ret, "Deposit complete.\n");
+			break;
+		case 3:
+			printf("How much would you like to withdraw: ");
+			scanf("%d", &input);
+			fflush(stdin); // clear buffer to avoid bad mermes
+			if (withdraw(input) == -1) {
+				stpcpy(ret, "Cannot withdraw more than balance.\n");
+				break;
+			}
+			stpcpy(ret, "Withdraw complete.\n");
+			break;
+		case 4:
+			stpcpy(ret, "Goodbye");
+			loggedIn = -1;
+	}
+	return ret;
 }
