@@ -7,4 +7,6 @@ char* loadAccounts();
 
 char* login(char* username, char* password);
 
+int* viewBalance();
+
 #endif

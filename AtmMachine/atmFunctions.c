@@ -32,3 +32,9 @@ char* login(char* username, char* password) {
 	}
 	return "Invalid username";
 }
+
+int* viewBalance()
+{
+	int* currentBal = accountList[loggedIn].balance;
+	return currentBal;
+}
