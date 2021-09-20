@@ -5,8 +5,13 @@
 
 char* loadAccounts();
 
-char* login(char* username, char* password);
+int login(char* username, char* password);
 
-int* viewBalance();
+int viewBalance();
 
+char* processSelection(int menuChoice);
+
+int withdraw (int val);
+
+void deposit(int val);
 #endif
