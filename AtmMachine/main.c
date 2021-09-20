@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "atmFunctions.h"
 
 
@@ -11,6 +12,7 @@ int main()
 	
 	while(1)
 	{
+		system("clear");
 		printf("Welcome to the ATM machine.\n");
 		printf("Enter your username: ");
 		gets(username);
@@ -36,7 +38,8 @@ int main()
 			char buffer[8];
 			gets(buffer);
 			menuChoice = (int)*buffer - 48;
-
+			
+			system("clear");
 			char* atmResponse = processSelection(menuChoice);
 			printf("\n%s\n\n", atmResponse);
 		}

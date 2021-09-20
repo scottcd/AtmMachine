@@ -67,14 +67,14 @@ char* processSelection(int menuChoice)
 			printf("How much would you like to deposit: ");
 			scanf("%d", &input);
 			fflush(stdin); // clear buffer to avoid bad mermes
-			deposit(input);
+			deposit(abs(input));
 			stpcpy(ret, "Deposit complete.\n");
 			break;
 		case 3:
 			printf("How much would you like to withdraw: ");
 			scanf("%d", &input);
 			fflush(stdin); // clear buffer to avoid bad mermes
-			if (withdraw(input) == -1) {
+			if (withdraw(abs(input)) == -1) {
 				stpcpy(ret, "Cannot withdraw more than balance.\n");
 				break;
 			}
