@@ -69,7 +69,7 @@ char* processSelection(int menuChoice)
 	{
 		case 1:
 			bal = viewBalance();
-			sprintf(ret, "Balance: %d", bal);
+			sprintf(ret, "Balance: $%d", bal);
 			break;
 		case 2:
 			printf("How much would you like to deposit: ");
