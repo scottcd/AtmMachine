@@ -6,19 +6,14 @@
 
 int main()
 {
-	char username[25];
-	char password[25];
 	loadAccounts();
 	
 	while(1)
 	{
 		system("clear");
 		printf("Welcome to the ATM machine.\n");
-		printf("Enter your username: ");
-		gets(username);
-		printf("Enter your password: ");
-		gets(password);
-		int validation = (int)login(username, password);
+
+		int validation = (int)login();
 
 		if(validation == 0)
 		{

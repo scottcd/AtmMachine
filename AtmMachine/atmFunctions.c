@@ -17,7 +17,15 @@ void loadAccounts()
 	accountList[1] = a2;
 }
 
-int login(char* username, char* password) {
+int login() {
+	char username [25];
+	char password [25];
+
+	printf("Enter your username: ");
+	gets(username);
+	printf("Enter your password: ");
+	gets(password);
+
 	for (int i = 0; i < numberOfAccounts; i++) {
 		if (strcmp(accountList[i].username, username) == 0) {
 			if (strcmp(accountList[i].password, password) == 0) {
